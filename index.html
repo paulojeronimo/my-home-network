@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Paulo Jerônimo</span><br>
 <span id="email" class="email"><a href="mailto:pj@paulojeronimo.com">pj@paulojeronimo.com</a></span><br>
-<span id="revdate">2021-02-16 10:44:40 -0300</span>
+<span id="revdate">2021-02-16 11:19:50 -0300</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -459,7 +459,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#hostnames">3. Hostnames</a>
 <ul class="sectlevel2">
 <li><a href="#name-formation">3.1. Name formation</a></li>
-<li><a href="#virtualized-systems">3.2. Virtualized systems</a></li>
+<li><a href="#virtualized-machines-vms">3.2. Virtualized machines (VMs)</a></li>
 <li><a href="#examples">3.3. Examples</a></li>
 </ul>
 </li>
@@ -549,8 +549,8 @@ in some of them.</p>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="name-formation"><a class="anchor" href="#name-formation"></a>3.1. Name formation</h3>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>The first two letters: device owner&#8217;s initials. Examples:</p>
 <div class="ulist">
@@ -565,11 +565,11 @@ in some of them.</p>
 </div>
 </li>
 <li>
-<p>The third letter: device number (<a href="https://en.wikipedia.org/wiki/Base32#Crockford&#8217;s_Base32" target="_blank" rel="noopener">Crockford&#8217;s
-Base32</a>)</p>
+<p><a id="base32"></a> The third letter: the device number
+(<a href="https://en.wikipedia.org/wiki/Base32#Crockford&#8217;s_Base32" target="_blank" rel="noopener">in Crockford&#8217;s Base32</a>).</p>
 </li>
 <li>
-<p>The fourth letter: device operational system. Examples:</p>
+<p><a id="os-letter"></a> The fourth letter: device operational system. Examples:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -590,31 +590,46 @@ Base32</a>)</p>
 </ul>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="virtualized-systems"><a class="anchor" href="#virtualized-systems"></a>3.2. Virtualized systems</h3>
+<h3 id="virtualized-machines-vms"><a class="anchor" href="#virtualized-machines-vms"></a>3.2. Virtualized machines (VMs)</h3>
 <div class="paragraph">
-<p>Virtualized systems appends 'v*' to their hostname.</p>
+<p>VMs contains a dash (<code>-</code>) in their hostname used as a separator for two
+parts of the name.
+The first part is the name of the host machine.
+The second part is freely named but I usually name it containing at
+least two characters:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>First character: a <a href="#os-letter">letter identifying the operational
+system</a>.</p>
+</li>
+<li>
+<p>Second character: a digit in <a href="#base32">base32</a>.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
 <h3 id="examples"><a class="anchor" href="#examples"></a>3.3. Examples</h3>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><a href="#pj0m">pj0m</a>: first PJ&#8217;s MacBook running a macOS operational system.</p>
 </li>
 <li>
-<p><code>pj1mv0u</code>: first virtualized Ubuntu machine running on host macOS on
+<p><code>pj1m-u0</code>: first virtualized Ubuntu machine running on host macOS on
 the second PJ&#8217;s MacBook (<a href="#pj1m">pj1m</a>).</p>
 </li>
 <li>
 <p><a href="#co0u">co0u</a>: first company&#8217;s laptop running a Ubuntu operational
 system.</p>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
@@ -622,12 +637,11 @@ system.</p>
 <div class="sect1">
 <h2 id="ips-reservation-by-hostname"><a class="anchor" href="#ips-reservation-by-hostname"></a>4. IPs reservation by hostname</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Reserved IPs: from 2 to 21 (20 ips):</p>
-<div class="ulist">
-<ul>
+<div class="paragraph">
+<p>Reserved IPs: from 2 to 21 (20 ips).</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Reserved for <a href="#pj0m">pj0m</a> (4 ips): 2-5.</p>
 </li>
@@ -636,10 +650,13 @@ system.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Wi-Fi: 6</p>
+<p>Wi-Fi: 6.</p>
 </li>
 <li>
-<p>Wired: 7</p>
+<p>Wired: 7.</p>
+</li>
+<li>
+<p>Reserved for VMs: 8-13.</p>
 </li>
 </ul>
 </div>
@@ -649,18 +666,18 @@ system.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Wi-Fi: 14</p>
+<p>Wired: 14.</p>
 </li>
 <li>
-<p>Wired: 15</p>
+<p>Wi-Fi: 15.</p>
+</li>
+<li>
+<p>Reserved for VMs: 16-21.</p>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-</li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
@@ -676,7 +693,7 @@ system.</p>
 <div class="sect2">
 <h3 id="for-pj1m"><a class="anchor" href="#for-pj1m"></a>5.2. pj1m</h3>
 <div class="paragraph">
-<p>Hostname:</p>
+<p>These are my network configurations for <a href="#pj1m">pj1m</a>. Hostname:</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/pj1m.hostname.png" alt="pj1m.hostname"></span></p>
