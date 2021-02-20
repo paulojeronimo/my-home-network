@@ -444,7 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Paulo Jerônimo</span><br>
 <span id="email" class="email"><a href="mailto:pj@paulojeronimo.com">pj@paulojeronimo.com</a></span><br>
-<span id="revdate">2021-02-20 10:50:47 -0300</span>
+<span id="revdate">2021-02-20 11:11:17 -0300</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -825,6 +825,18 @@ Log file is /home/pj/.vnc/co0u:1.log
 Use xtigervncviewer -SecurityTypes VncAuth -passwd /home/pj/.vnc/passwd :1 to connect to the VNC server.</pre>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will be prompted to create a password.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>VNC execution verify:</p>
 </div>
@@ -858,9 +870,10 @@ $ # Put the ssh execution running in the background
 $ bg</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Open <code>Finder</code> and connect to server (type <code>Command + K</code>) and
-enter on the <code>Server Address</code> field: <code>vnc://localhost:59000</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ open vnc://localhost:59000</pre>
+</div>
 </div>
 </div>
 <div class="sect3">
